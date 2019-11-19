@@ -1,10 +1,12 @@
 const menus = [
   {id: '1',
+    className: '1',
     label: '人员管理',
     submenu: [
       {
         id: 'user',
         label: '用户管理',
+        name: 'user',
         icon: 'fa fa-hand-o-up'
       },
       {
@@ -20,7 +22,8 @@ const menus = [
     ]
   },
   {
-    id: '2',
+    id: '1',
+    className: '1',
     label: '医疗管理',
     submenu: [
       {
@@ -35,13 +38,16 @@ const menus = [
     ]
   },
   {
-    id: '5', label: '预约管理'
+    id: '1', label: '预约管理', className: '1'
   },
   {
-    id: '6', label: '病历管理'
+    id: '1', label: '病历管理', className: '1'
   },
   {
-    id: '7', label: '订单管理'
+    id: '1', label: '订单管理', className: '1'
+  },
+  {
+    id: '1', label: '新增管理员', className: '1'
   },
   {
     id: 'components',
@@ -92,19 +98,6 @@ const menus = [
       {id: '400', path: '/404', label: '404'},
       {id: '500', path: '/500', label: '500'}
     ]
-  },
-  {
-    id: 'examples',
-    icon: 'fa fa-paper-plane',
-    label: 'Examples',
-    submenu: [
-      {id: 'e1', path: '/500', label: 'Vuex 例子'}
-    ]
-  },
-  {
-    id: 'version',
-    icon: 'fa fa-meetup',
-    label: '应用'
   }
 ]
 export default menus

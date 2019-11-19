@@ -29,14 +29,14 @@ export default new Router({
         {path: '/container', name: 'c-container', component: page('c-container')},
         {path: '/demo', name: 'demo', component: page('demo')},
         {path: '/404', name: '404', component: page('404')},
-        {path: '/500', name: '500', component: page('500')}
+        {path: '/500', name: '500', component: page('500')},
+        // 开始
+        {path: '/user', name: 'user', component: page('user')}
       ]
     },
     {path: '/login', name: 'login', component: page('login')},
     {path: '/cnode', name: 'cnode', component: page('cnode')},
     // pages
-    {path: '/home-login', name: 'p-login', component: page('home-login')},
-    {path: '/register', name: 'p-register', component: page('register')},
     {path: '/keyboard', name: 'p-keyboard', component: page('c-keyboard')},
     {path: '*', redirect: {name: '404'}}
   ]

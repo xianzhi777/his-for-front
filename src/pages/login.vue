@@ -26,8 +26,10 @@
   </div>
 </div>
 </template>
+
 <script>
 import {mapActions} from 'vuex'
+import axios from 'axios'
 export default {
   name: 'login',
   data () {
@@ -46,11 +48,13 @@ export default {
       if (!this.username || !this.password) {
         return this.$message.warning('用户名和密码不能为空')
       }
-      this.isLoging = true
-      this.login({
-        username: this.username,
-        password: this.password
-      }).then(res => {
+
+      var json = {"username":this.username,"password":this.password};
+
+      axios.post('/booktype/user',
+        json).then((data) => {
+        alert(data.username)
+        this.isLoging = true
         this.$message.success('登录成功')
         this.$router.push({name: 'home'})
         this.isLoging = false

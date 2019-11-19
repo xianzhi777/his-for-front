@@ -37,7 +37,7 @@ import MContainer from '@/m/container'
 
 
 Vue.use(ElementUI)
-
+Vue.use(Axios)
 Vue.use(DropdownPlugin)
 Vue.use(NavbarPlugin)
 Vue.use(ContextMenuPlugin)
@@ -112,7 +112,8 @@ Axios.interceptors.response.use(res => {
 })
 
 
-Vue.prototype.$http = Axios
+Vue.prototype.axios = Axios
+Axios.defaults.headers.post['Content-Type'] = 'application.json'
 Vue.http = Axios
 
 
