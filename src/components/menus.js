@@ -1,5 +1,6 @@
 const menus = [
-  {id: '1', label: '人员管理',
+  {id: '1',
+    label: '人员管理',
     submenu: [
       {
         id: 'user',
@@ -19,7 +20,8 @@ const menus = [
     ]
   },
   {
-    id: '2', label: '医疗管理',
+    id: '2',
+    label: '医疗管理',
     submenu: [
       {
         id: '3', label: '药品管理', icon: 'fa fa-hand-o-up'
@@ -33,7 +35,7 @@ const menus = [
     ]
   },
   {
-    id: '5', label: '预约管理',
+    id: '5', label: '预约管理'
   },
   {
     id: '6', label: '病历管理'

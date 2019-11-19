@@ -4,7 +4,7 @@
     <div style="text-align: center">
       <img src="../assets/logo.png" alt="" class="logo">
     </div>
-    <p class="text-tips">你好，欢迎登录</p>
+    <p class="text-tips">His医务人员后台系统</p>
     <form action="" class="login-form">
       <div class="m-list-group">
         <div class="m-list-group-item">
@@ -14,7 +14,7 @@
           <input type="password" placeholder="Password" class="m-input" v-model="password">
         </div>
       </div>
-      <p class="text-tips">免密码，点击登录按钮进入</p>
+
       <button class="m-btn sub select-none" @click.prevent="handleLogin" v-loading="isLoging">登录</button>
     </form>
     <div style="margin-top: 50px"></div>

@@ -10,19 +10,14 @@
       ></i>
   </m-navbar-brand>
   <m-nav>
-    <m-nav-item><a href="https://www.lanyueos.com" target="_blank">主页</a></m-nav-item>
-    <m-nav-item><a href="https://blog.lanyueos.com" target="_blank">博客</a></m-nav-item>
-    <m-nav-item><a href="https://www.lanyueos.com" target="_blank">关于</a></m-nav-item>
+    <m-nav-item><a href="/" >主页</a></m-nav-item>
   </m-nav>
   <m-nav align="right">
-    <m-nav-item padding="0">
-      <a href="https://github.com/mengdu/vue-element-admin-tpl" target="_blank"><i class="fa fa-github" style="font-size: 26px;vertical-align: middle;"></i>&nbsp;Github</a>
-    </m-nav-item>
     <m-nav-item padding="0">
       <m-dropdown align="right" v-if="user" padding="0 10px">
         <a href="#" style="display: inline-block; padding: 0px; color: inherit">
           <img src="../assets/user.jpg" alt="" style="border-radius: 3px;vertical-align: middle;">
-          <span>{{user.username}}</span> 
+          <span>{{user.username}}</span>
           <span class="caret"></span>
         </a>
         <m-dropdown-panel>
@@ -36,8 +31,8 @@
     </m-nav-item>
     <m-nav-item padding="0 5px">
       <a href="#" @click.stop.prevent="handleSwitchScreen">
-        <i 
-          class="fa" 
+        <i
+          class="fa"
           :class="isFullScreen ? 'fa-compress' : 'fa-expand'"
           ></i>
       </a>
