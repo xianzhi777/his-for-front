@@ -1,6 +1,6 @@
 const menus = [
   {id: '1',
-    className: '1',
+    className: '3',
     label: '人员管理',
     submenu: [
       {
@@ -24,7 +24,7 @@ const menus = [
   },
   {
     id: '1',
-    className: '1',
+    className: '3',
     label: '医疗管理',
     submenu: [
       {
@@ -39,16 +39,16 @@ const menus = [
     ]
   },
   {
-    id: '1', label: '预约管理', className: '1'
+    id: '1', label: '预约管理', className: '3'
   },
   {
-    id: '1', label: '病历管理', className: '1'
+    id: '1', label: '病历管理', className: '3'
   },
   {
-    id: '1', label: '订单管理', className: '1'
+    id: '1', label: '订单管理', className: '3'
   },
   {
-    id: '1', label: '新增管理员', className: '1'
+    id: '1', label: '新增管理员', className: '4'
   },
   {
     id: 'components',
