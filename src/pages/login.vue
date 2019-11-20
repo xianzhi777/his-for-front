@@ -34,12 +34,13 @@ export default {
   name: 'login',
   data () {
     return {
-      username: 'Administrator',
-      password: '123456',
+      username: 'admin',
+      password: 'admin',
       isLoging: false,
       author: window.APP_INFO.author,
       version: window.APP_INFO.version,
-      appName: window.APP_INFO.appName
+      appName: window.APP_INFO.appName,
+      user:''
     }
   },
   methods: {
@@ -49,16 +50,32 @@ export default {
         return this.$message.warning('用户名和密码不能为空')
       }
 
-      var json = {"username":this.username,"password":this.password};
+          /*this.login({
+            username: this.username,
+            password: this.password
+          }).then(res => {
+            this.$message.success('登录成功')
+            this.$router.push({name: 'home'})
 
-      axios.post('/booktype/user',
-        json).then((data) => {
-        alert(data.username)
-        this.isLoging = true
-        this.$message.success('登录成功')
-        this.$router.push({name: 'home'})
-        this.isLoging = false
+          })
+        }*/
+      var json = {'account': this.username, 'password': this.password}
+      this.login({
+        username: this.username,
+        password: this.password
+      }).then(res=>{
+        axios.post('/back/admin/login',
+          json).then(data => {
+          if (data != "") {
+            sessionStorage.setItem("u",data.status)
+            this.$message.success('登录成功')
+            this.$router.push({name: 'home'})
+          } else {
+            this.$message.error('登录失败')
+          }
+        })
       })
+
     }
   }
 }

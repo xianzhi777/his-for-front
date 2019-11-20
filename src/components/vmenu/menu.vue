@@ -14,7 +14,7 @@
   @close="close"
   @select="select"
   >
-  <template v-for="item in menus" v-if="item.className==1">
+  <template v-for="item in menus" v-if="item.className==items.u">
     <template v-if="isArr(item)">
     <el-menu-item-group
       :title="typeof item[0] === 'string' ? item[0] : ''"
@@ -62,6 +62,13 @@
 import menuList from './chunk'
 export default {
   name: 'VMenu',
+  data () {
+    return {
+      items: {
+        u: sessionStorage.getItem('u')
+      }
+    }
+  },
   props: {
     mode: {
       type: String,
@@ -81,6 +88,10 @@ export default {
     router: Boolean,
     menus: {
       type: Array,
+      required: true
+    },
+    user: {
+      type: String,
       required: true
     }
   },
@@ -108,7 +119,8 @@ export default {
     select (index) {
       this.$emit('select', index)
     }
-  }
+  },
+
 }
 </script>
 <style type="text/css">

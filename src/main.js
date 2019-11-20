@@ -37,7 +37,6 @@ import MContainer from '@/m/container'
 
 
 Vue.use(ElementUI)
-Vue.use(Axios)
 Vue.use(DropdownPlugin)
 Vue.use(NavbarPlugin)
 Vue.use(ContextMenuPlugin)
