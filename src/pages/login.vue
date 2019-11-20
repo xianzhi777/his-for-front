@@ -49,16 +49,19 @@ export default {
         return this.$message.warning('用户名和密码不能为空')
       }
 
-      var json = {"username":this.username,"password":this.password};
-
-      axios.post('/booktype/user',
-        json).then((data) => {
-        alert(data.username)
-        this.isLoging = true
-        this.$message.success('登录成功')
-        this.$router.push({name: 'home'})
-        this.isLoging = false
-      })
+      // var json = {"username":this.username,"password":this.password};
+      this.isLoging = true
+      this.$message.success('登录成功')
+      this.$router.push({name: 'home'})
+      this.isLoging = false
+      // axios.post('/booktype/user',
+      //   json).then((data) => {
+      //   alert(data.username)
+      //   this.isLoging = true
+      //   this.$message.success('登录成功')
+      //   this.$router.push({name: 'home'})
+      //   this.isLoging = false
+      // })
     }
   }
 }

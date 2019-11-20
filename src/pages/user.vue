@@ -7,12 +7,12 @@
       <el-table
         :data="tableData"
       >
-        <el-table-column label="ID" prop="user_id" width="80"></el-table-column>
+        <el-table-column label="ID" prop="userId" width="80"></el-table-column>
         <el-table-column label="账户" prop="account"></el-table-column>
-        <el-table-column label="姓名" prop="name"></el-table-column>
-        <el-table-column label="手机号码" prop="phone_num"></el-table-column>
-        <el-table-column label="身份证号" prop="id_num"></el-table-column>
-        <el-table-column label="民族" prop="nation"></el-table-column>
+        <el-table-column label="姓名" prop="userName"></el-table-column>
+        <el-table-column label="手机号码" prop="phoneNum"></el-table-column>
+        <el-table-column label="身份证号" prop="creditNum"></el-table-column>
+        <el-table-column label="民族" prop="nationName"></el-table-column>
         <el-table-column label="地址" prop="address"></el-table-column>
         <el-table-column label="性别" prop="sex"></el-table-column>
         <el-table-column
@@ -40,23 +40,7 @@
   export default {
     data () {
       return {
-        tableData: [{
-          user_id: '1',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          user_id: '2',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          user_id: '3',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          user_id: '4',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }]
+        tableData: []
       }
     },
     methods: {
@@ -66,6 +50,13 @@
       deleteuser (id) {
         alert('删除' + id)
       }
+    },
+    created () {
+      this.axios.get('/api/user/all')
+        .then((data) => {
+          console.log(data)
+          this.tableData = data
+        })
     }
   }
 

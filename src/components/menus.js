@@ -17,6 +17,7 @@ const menus = [
       {
         id: 'dept',
         label: '部门管理',
+        name: 'dept',
         icon: 'fa fa-hand-o-up'
       }
     ]
