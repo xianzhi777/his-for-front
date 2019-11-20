@@ -29,16 +29,18 @@
 
 <script>
 import {mapActions} from 'vuex'
+import axios from 'axios'
 export default {
   name: 'login',
   data () {
     return {
-      username: 'Administrator',
-      password: '123456',
+      username: 'admin',
+      password: 'admin',
       isLoging: false,
       author: window.APP_INFO.author,
       version: window.APP_INFO.version,
-      appName: window.APP_INFO.appName
+      appName: window.APP_INFO.appName,
+      user:''
     }
   },
   methods: {
@@ -47,10 +49,33 @@ export default {
       if (!this.username || !this.password) {
         return this.$message.warning('用户名和密码不能为空')
       }
-      this.isLoging = true
-      this.$message.success('登录成功')
-      this.$router.push({name: 'home'})
-      this.isLoging = false
+
+          /*this.login({
+            username: this.username,
+            password: this.password
+          }).then(res => {
+            this.$message.success('登录成功')
+            this.$router.push({name: 'home'})
+
+          })
+        }*/
+      var json = {'account': this.username, 'password': this.password}
+      this.login({
+        username: this.username,
+        password: this.password
+      }).then(res=>{
+        axios.post('/back/admin/login',
+          json).then(data => {
+          if (data != "") {
+            sessionStorage.setItem("u",data.status)
+            this.$message.success('登录成功')
+            this.$router.push({name: 'home'})
+          } else {
+            this.$message.error('登录失败')
+          }
+        })
+      })
+
     }
   }
 }
