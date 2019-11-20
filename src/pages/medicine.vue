@@ -89,7 +89,6 @@
             {type: 'number', message: '价格必须为数字值'}
           ]
         }
-
       }
     },
     methods: {
