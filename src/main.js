@@ -58,7 +58,7 @@ var whiteList = ['demo', 'login']
 router.beforeEach((to, from, next) => {
   NProgress.start()
   var token = sessionStorage.getItem('token')
-  if (token && whiteList.indexOf(to.name) === -1) {
+  if (!token && whiteList.indexOf(to.name) === -1) {
     app && app.$message.warning('未授权，请登陆授权后继续')
     NProgress.done()
     return next({name: 'login'})

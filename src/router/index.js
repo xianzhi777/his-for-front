@@ -31,7 +31,9 @@ export default new Router({
         {path: '/404', name: '404', component: page('404')},
         {path: '/500', name: '500', component: page('500')},
         // 开始
-        {path: '/user', name: 'user', component: page('user')}
+        {path: '/user', name: 'user', component: page('user')},
+        {path: '/medicine', name: 'medicine', component: page('medicine')},
+        {path: '/disease', name: 'disease', component: page('disease')}
       ]
     },
     {path: '/login', name: 'login', component: page('login')},

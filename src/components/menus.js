@@ -27,13 +27,13 @@ const menus = [
     label: '医疗管理',
     submenu: [
       {
-        id: '3', label: '药品管理', icon: 'fa fa-hand-o-up'
+        id: 'medicine', label: '药品管理', name: 'medicine', icon: 'fa fa-medkit'
       },
       {
-        id: '4', label: '疾病管理', icon: 'fa fa-hand-o-up'
+        id: 'disease', label: '疾病管理', name: 'disease', icon: 'fa fa-stethoscope'
       },
       {
-        id: '5', label: '床位管理', name: 'c-button', icon: 'fa fa-hand-o-up'
+        id: 'bed', label: '床位管理', name: 'c-button', icon: 'fa fa-bed'
       }
     ]
   },
