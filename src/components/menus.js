@@ -27,10 +27,10 @@ const menus = [
     label: '医疗管理',
     submenu: [
       {
-        id: '21', label: '药品管理', icon: 'fa fa-hand-o-up'
+        id: '21', label: '药品管理', icon: 'fa fa-hand-o-up', name: 'medicine'
       },
       {
-        id: '22', label: '疾病管理', icon: 'fa fa-hand-o-up'
+        id: '22', label: '疾病管理', icon: 'fa fa-hand-o-up', name: 'disease'
       },
       {
         id: '23', label: '床位管理', name: 'c-button', icon: 'fa fa-hand-o-up'
@@ -47,7 +47,7 @@ const menus = [
     id: '5', label: '订单管理', className: '3'
   },
   {
-    id: '6', label: '新增管理员', className: '4'
+    id: '6', label: '管理员管理', className: '4',name: 'addadmin'
   },
   {
     id: '7', label: '医生工作站', className: '5'

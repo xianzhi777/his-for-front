@@ -33,7 +33,8 @@ export default new Router({
         // 开始
         {path: '/user', name: 'user', component: page('user')},
         {path: '/medicine', name: 'medicine', component: page('medicine')},
-        {path: '/disease', name: 'disease', component: page('disease')}
+        {path: '/disease', name: 'disease', component: page('disease')},
+        {path: '/addadmin', name: 'addadmin', component: page('addadmin')}
       ]
     },
     {path: '/login', name: 'login', component: page('login')},

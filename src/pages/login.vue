@@ -65,7 +65,6 @@ export default {
       }).then(res => {
         axios.post('/back/admin/login',
           json).then(data => {
-
           if (data != '') {
             sessionStorage.setItem('u', data.status)
             this.$message.success('登录成功')
