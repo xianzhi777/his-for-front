@@ -49,7 +49,6 @@ export default {
       if (!this.username || !this.password) {
         return this.$message.warning('用户名和密码不能为空')
       }
-
           /*this.login({
             username: this.username,
             password: this.password
@@ -75,7 +74,6 @@ export default {
           }
         })
       })
-
     }
   }
 }

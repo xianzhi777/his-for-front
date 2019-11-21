@@ -3,7 +3,7 @@
 
   <center>
     <img src="../assets/logo.png" alt="" style="margin-top: 50px;width: 200px;">
-    <h1 style="font-weight: 100;font-size: 35px;">His后台管理系统</h1>
+    <h1 style="font-weight: 100;font-size: 35px;">His系统</h1>
   </center>
 
 </div>
