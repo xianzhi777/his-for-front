@@ -34,6 +34,10 @@ export default new Router({
         {path: '/user', name: 'user', component: page('user')},
         {path: '/dept', name: 'dept', component: page('dept')},
         {path: '/caseHistory', name: 'caseHistory', component: page('caseHistory')}
+        {path: '/user', name: 'user', component: page('user')},
+        {path: '/medicine', name: 'medicine', component: page('medicine')},
+        {path: '/disease', name: 'disease', component: page('disease')},
+        {path: '/addadmin', name: 'addadmin', component: page('addadmin')}
       ]
     },
     {path: '/login', name: 'login', component: page('login')},

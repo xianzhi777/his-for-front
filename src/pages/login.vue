@@ -40,7 +40,7 @@ export default {
       author: window.APP_INFO.author,
       version: window.APP_INFO.version,
       appName: window.APP_INFO.appName,
-      user:''
+      user: ''
     }
   },
   methods: {
@@ -49,7 +49,6 @@ export default {
       if (!this.username || !this.password) {
         return this.$message.warning('用户名和密码不能为空')
       }
-
           /*this.login({
             username: this.username,
             password: this.password
@@ -63,11 +62,11 @@ export default {
       this.login({
         username: this.username,
         password: this.password
-      }).then(res=>{
+      }).then(res => {
         axios.post('/back/admin/login',
           json).then(data => {
-          if (data != "") {
-            sessionStorage.setItem("u",data.status)
+          if (data != '') {
+            sessionStorage.setItem('u', data.status)
             this.$message.success('登录成功')
             this.$router.push({name: 'home'})
           } else {
@@ -75,7 +74,6 @@ export default {
           }
         })
       })
-
     }
   }
 }
