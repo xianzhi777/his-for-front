@@ -26,11 +26,22 @@
     </el-dialog>
     <div class="box">
       <el-table
-        :data="tableData"
+        :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
       >
-        <el-table-column label="ID" prop="medicineId" width="80"></el-table-column>
-        <el-table-column label="疾病名称" prop="medicineName"></el-table-column>
+        <el-table-column label="ID" prop="diseaseId" width="80"></el-table-column>
+        <el-table-column label="疾病名称" prop="diseaseName"></el-table-column>
       </el-table>
+      <el-row style="background-color: white" >
+        <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="currentPage"
+          :page-sizes="[1, 5, 10, 20]"
+          :page-size="pagesize"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="tableData.length" style="float:right;">
+        </el-pagination>
+      </el-row>
     </div>
   </div>
 
@@ -49,6 +60,8 @@
       return {
         dialogVisible: false,
         tableData: [],
+          currentPage:1,
+          pagesize:5,
         ruleForm: {
             diseaseId:'',
           diseaseName: '',
@@ -61,56 +74,79 @@
 
       }
     },
+      mounted(){
+        this.findAll()
+      },
+      watch:{
+          '$route':'findAll'
+      },
     methods: {
+        //权限判断
+        judAuthority(){
+            if(sessionStorage.getItem('u') !=3 ){
+                this.$message.warning('用户权限不足')
+                return false
+            }else{
+                return true
+            }
+        },
+        //分页
+        handleSizeChange: function (size) {
+            this.pagesize = size;
+            console.log(this.pagesize)  //每页下拉显示数据
+        },
+        handleCurrentChange: function(currentPage){
+            this.currentPage = currentPage;
+            console.log(this.currentPage)  //点击第几页
+        },
+
       findAll () {
-        axios.get('/back/disease/findAll').then((res) => {
-            console.log(res)
-          this.tableData = res
-        })
+            if(this.judAuthority()){
+                axios.get('/back/disease/findAll').then((res) => {
+                    console.log(res)
+                    this.tableData = res
+                })
+            }
       },
       handleClose (done) {
-          this.reset();
+          this.resetForm('ruleForm');
             done()
 
       },
       submitForm (formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-              this.$confirm('确认添加？').then(_ =>{
-                  axios.put('/back/disease/insert',
-                      {'diseaseName': this.ruleForm.diseaseName}).then((res) => {
-                      if (res <= 0) {
-                          this.$message.error('添加失败')
-                      } else {
-                          this.$message.success('添加成功')
-                          this.dialogVisible = false
-                          this.findAll()
-                          this.reset()
-                      }
-                  })
-              })
-          } else {
-            console.log('error submit!!')
-            return false
-          }
-        })
-      },
-        reset(){
-            this.ruleForm={
-                diseaseId:'',
-                diseaseName: '',
+            if(this.judAuthority()){
+                this.$refs[formName].validate((valid) => {
+                    if (valid) {
+                        this.$confirm('确认添加？').then(_ =>{
+                            axios.put('/back/disease/insert',
+                                {'diseaseName': this.ruleForm.diseaseName}).then((res) => {
+                                if (res <= 0) {
+                                    this.$message.error('添加失败')
+                                } else {
+                                    this.$message.success('添加成功')
+                                    this.dialogVisible = false
+                                    this.findAll()
+                                    this.resetForm('ruleForm')
+                                }
+                            })
+                        })
+                    } else {
+                        console.log('error submit!!')
+                        return false
+                    }
+                })
             }
-        },
+      },
       resetForm (formName) {
         this.$refs[formName].resetFields()
       },
-    created () {
+    /*created () {
           alert("aaa")
       axios.get('/back/disease/findAll').then((res) => {
           alert('jjj')
         this.tableData = res
       })
-    }
+    }*/
   }
   }
 </script>
