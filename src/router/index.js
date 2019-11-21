@@ -32,7 +32,8 @@ export default new Router({
         {path: '/500', name: '500', component: page('500')},
         // 开始
         {path: '/user', name: 'user', component: page('user')},
-        {path: '/dept', name: 'dept', component: page('dept')}
+        {path: '/dept', name: 'dept', component: page('dept')},
+        {path: '/caseHistory', name: 'caseHistory', component: page('caseHistory')}
       ]
     },
     {path: '/login', name: 'login', component: page('login')},

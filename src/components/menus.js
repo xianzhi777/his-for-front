@@ -7,23 +7,23 @@ const menus = [
         id: 'user',
         label: '用户管理',
         name: 'user',
-        icon: 'fa fa-hand-o-up'
+        icon: 'fa fa-user'
       },
       {
         id: 'admin',
         label: '员工管理',
-        icon: 'fa fa-hand-o-up'
+        icon: 'fa fa-user-md'
       },
       {
         id: 'dept',
         label: '部门管理',
         name: 'dept',
-        icon: 'fa fa-hand-o-up'
+        icon: 'fa fa-briefcase'
       }
     ]
   },
   {
-    id: '1',
+    id: '2',
     className: '3',
     label: '医疗管理',
     submenu: [
@@ -39,16 +39,16 @@ const menus = [
     ]
   },
   {
-    id: '1', label: '预约管理', className: '3'
+    id: '6', label: '预约管理',  className: '3'
   },
   {
-    id: '1', label: '病历管理', className: '3'
+    id: '7', label: '病历管理', name: 'caseHistory', className: '3'
   },
   {
-    id: '1', label: '订单管理', className: '3'
+    id: '8', label: '订单管理', className: '3'
   },
   {
-    id: '1', label: '新增管理员', className: '4'
+    id: '9', label: '新增管理员', className: '4'
   },
   {
     id: 'components',
