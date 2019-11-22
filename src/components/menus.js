@@ -24,35 +24,36 @@ const menus = [
     ]
   },
   {
-    id: '2',
+    id: 'medicineManage',
     className: '3',
     label: '医疗管理',
     submenu: [
       {
-        id: '21', label: '药品管理', icon: 'fa fa-hand-o-up', name: 'medicine'
+        id: 'medicine', label: '药品管理', name: 'medicine', icon: 'fa fa-medkit'
       },
       {
-        id: '22', label: '疾病管理', icon: 'fa fa-hand-o-up', name: 'disease'
+        id: 'disease', label: '疾病管理', name: 'disease', icon: 'fa fa-stethoscope'
       },
       {
-        id: '23', label: '床位管理', name: 'c-button', icon: 'fa fa-hand-o-up'
+        id: 'bed', label: '床位管理', name: 'bed', icon: 'fa fa-bed'
       }
     ]
   },
   {
-    id: '3', label: '预约管理', className: '3'
+    id: 'appointment', label: '预约管理', className: '3',
+    submenu: [
+      {id: 'appointmentNoBed', label: '普通预约', name: 'appointment', icon: 'fa fa-book'},
+      {id: 'appointmentBed', label: '床位预约', name: 'appointmentBed', icon: 'fa fa-bed'}
+    ]
   },
   {
     id: '4', label: '病历管理',name: 'caseHistory', className: '3'
   },
   {
-    id: '5', label: '订单管理', className: '3'
-  },
-  {
     id: '6', label: '管理员管理', className: '4',name: 'addadmin'
   },
   {
-    id: '7', label: '医生工作站', className: '5'
+    id: 'order', label: '订单管理',name: 'order', className: '3'
   },
   {
     id: '8', label: '住院系统', className: '6'

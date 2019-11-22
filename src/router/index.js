@@ -37,7 +37,12 @@ export default new Router({
         {path: '/medicine', name: 'medicine', component: page('medicine')},
         {path: '/disease', name: 'disease', component: page('disease')},
         {path: '/addadmin', name: 'addadmin', component: page('addadmin')},
-        {path: '/admin', name: 'admin', component: page('admin')}
+        {path: '/admin', name: 'admin', component: page('admin')},
+        {path: '/disease', name: 'disease', component: page('disease')},
+        {path: '/bed', name: 'bed', component: page('bed')},
+        {path: '/appointment', name: 'appointment', component: page('appointment')},
+        {path: '/appointmentBed', name: 'appointmentBed', component: page('appointmentBed')},
+        {path: '/order', name: 'order', component: page('order')}
       ]
     },
     {path: '/login', name: 'login', component: page('login')},
