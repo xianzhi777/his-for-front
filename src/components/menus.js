@@ -12,6 +12,7 @@ const menus = [
       {
         id: 'admin',
         label: '员工管理',
+        name: 'admin',
         icon: 'fa fa-user-md'
       },
       {

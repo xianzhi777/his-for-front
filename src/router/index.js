@@ -33,11 +33,11 @@ export default new Router({
         // 开始
         {path: '/user', name: 'user', component: page('user')},
         {path: '/dept', name: 'dept', component: page('dept')},
-        {path: '/caseHistory', name: 'caseHistory', component: page('caseHistory')}
-        {path: '/user', name: 'user', component: page('user')},
+        {path: '/caseHistory', name: 'caseHistory', component: page('caseHistory')},
         {path: '/medicine', name: 'medicine', component: page('medicine')},
         {path: '/disease', name: 'disease', component: page('disease')},
-        {path: '/addadmin', name: 'addadmin', component: page('addadmin')}
+        {path: '/addadmin', name: 'addadmin', component: page('addadmin')},
+        {path: '/admin', name: 'admin', component: page('admin')}
       ]
     },
     {path: '/login', name: 'login', component: page('login')},
